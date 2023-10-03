@@ -12,17 +12,44 @@
 
 Pong is one of the first computer games that ever created, this simple "tennis like" game features two paddles and a ball, the goal is to defeat your opponent by being the first one to gain10 point, a player gets a point once the opponent misses a ball. Pong became a huge success, and became the first commercially successful game, on 1975, Atari release a home edition of Pong (the first version was played on Arcade machines) which sold 150,000 units. Today, the Pong Game is considered to be the game which started the video games industry, as it proved that the video games market can produce significant revenues.
 
-[More About...](https://www.ponggame.org/)
+[More About Pong Game...](https://www.ponggame.org/)
 
-### This is my very first game created using Unity.
 
+<div align="center">
 
 # Creating Process
 
-## Grapichs Elements
+</div>
+
+## Template
+ The very first step is setting the template properly, 2D Core must be selected.
+
+## Graphics Elements
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/Elements.png?raw=true" width="450" title="Pong">
+</p>
+The great majority of the grapichs elements are created selecting 2D Object -> Sprites -> Square.
+However the counters are created different, UI -> Text TextMeshPro
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/ElementsList.png?raw=true" width="350" title="Pong">
+</p>
 
 
 
 
-### Feel free to download or fork this repo and explore the files and undertstand how I made this project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##### Feel free to download or fork this repo and explore the files and undertstand how I made this project.
 
