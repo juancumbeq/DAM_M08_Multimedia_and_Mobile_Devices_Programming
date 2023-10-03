@@ -51,18 +51,33 @@ Today, the Pong Game is considered to be the game which started the video games 
 </p>
 
 
-##  RigidBody
+## RigidBody
 - Rigidbodies enable your GameObjects to act under the control of physics. The Rigidbody can receive forces and torque to make your objects move in a realistic way. Any GameObject must contain a Rigidbody to be influenced by gravity, act under added forces via scripting, or interact with other objects through the NVIDIA PhysX physics engine.
 <p align="center">
-  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/RigidBodyBola.png?raw=true" height="250" title="Pong">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/RigidBodyBola.png?raw=true" height="350" title="Pong">
 </p>
 
-- The only elements with a **RigidBody 2D** are **Pala1**, **Pala2** and **Bola**
+- The only elements with a **RigidBody 2D** are **Pala1**, **Pala2** and **Bola**. They are not gooing to rotate so is convenient to freeze rotation in Z axis.
 
+- **Pala1** and **Pala2** must be in Kinematic mode. It allows to control their movement based on a script, not phisics.
 
+- The Ball mantains the Dynamic mode but without gravity.
 
+- The RigidBody 2D allow us to set up that the ball will be affected by the impact with **Pala1** and **Pala2**, the result will be the ball bouncing which movement will be based on Phisics.
 
+## The Ball Phisics
+- The default Phisics rules can cause a lost of energy during the impacts, so to change that we can create a **Physics Material 2D** that prevents by modifying the Friction and the Bounciness value.
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial.png?raw=true" height="350" title="Pong">
+</p>
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial2.png?raw=true" height="350" title="Pong">
+</p>
 
+- This new rules must be applied to the **Bola** RigidBody by changing the Material
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/RigidBodyBola.png?raw=true" height="350" title="Pong">
+</p>
 
 
 
