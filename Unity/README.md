@@ -1,6 +1,7 @@
 # Pong
 
 ![alt text](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/Pong1.gif?raw=true "Title")
+![alt text](Images/Pong1.gif)
 
 <p align="center">
   <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/Pong1.gif?raw=true width="350" title="hover text">
