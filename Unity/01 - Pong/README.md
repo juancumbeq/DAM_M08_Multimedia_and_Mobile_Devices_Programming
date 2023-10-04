@@ -87,7 +87,7 @@ Today, the Pong Game is considered to be the game which started the video games 
 
 
 
-## Pala Physics
+## Paddle Physics
 <details>
 <summary>See more...</summary>
 <br>
@@ -165,12 +165,13 @@ public class Pala : MonoBehaviour
 
 11. **Vector2 posicionPala = transform.position;**: This line creates a Vector2 variable named "posicionPala" and initializes it with the current position of the GameObject to which this script is attached.
 
-12. **posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY);**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY."
+12. **posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY);**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY". We need to use limits because the RigidBody with Kinematic mode does not detects the collisions with the ceiling and floor.
 
 13. **transform.position = posicionPala;**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
 
 In summary, this script controls the vertical movement of a GameObject (likely a paddle) based on player input. The input controls can be different depending on whether "esPala1" is true or false, allowing for flexibility in controlling the GameObject's movement. The [SerializeField] attribute makes it possible to adjust the speed and control type from the Unity Inspector.
 
+  <br>
   <details>
   <summary>Why the "velocidad" value comes with a f?</summary>
   <br>
@@ -276,10 +277,76 @@ In summary, this script controls the vertical movement of a GameObject (likely a
   <br>
   </details>
   <br>
-
 </details>
 
 
+## Ball Movement
+<details>
+<summary>See more...</summary>
+<br>
+
+- As we did with the paddles, a new C# script must be created to design the ball movement
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bola : MonoBehaviour
+{
+    // Establecemos la velocidad inicial y valor de multiplicación
+    [SerializeField] private float velocidadInicial = 4f;
+    [SerializeField] private float valorDeMultiplicacion = 1.1f;
+
+    // Cogemos referencia a su Rigidbody
+    private Rigidbody2D bolaRb;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        bolaRb = GetComponent<Rigidbody2D> ();
+        Lanzar();
+    }
+
+    // Método que se encarga de lanzar la bola en el comienzo
+    private void Lanzar()
+    {
+        float velocidadX = Random.Range(0, 2) == 0 ? 1 : -1; // Range nos da 0 o 1 y lo convertimos a 1 o -1
+        float velocidadY = Random.Range(0, 2) == 0 ? 1 : -1;
+
+        // Asignamos a la velocidad de la bola un Vector2 y la multiplicamos por esa velocidad inicial
+        bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;
+    }
+
+    // Método para saber cuándo se produce una colisión
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Verificamos si colisiona con un objeto con TAG "PalaTag" => aumentamos velocidad
+        if(collision.gameObject.CompareTag("PalaTag"))
+        {
+            bolaRb.velocity *= valorDeMultiplicacion;
+        }
+    }
+
+    // Detectamos si se alcanzó alguan de las 2 zonas de gol
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("GolPala2Tag"))
+        {
+            ControladorJuego.Instance.GolPala1();
+        }
+        else
+        {
+            ControladorJuego.Instance.GolPala2();
+        }
+        // Reiniciamos los elementos del juego y lanzamos la bola
+        ControladorJuego.Instance.Reiniciar();
+        Lanzar();
+    }
+}
+```
+
+</details>
 
 
 
