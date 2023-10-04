@@ -132,7 +132,7 @@ public class Pala : MonoBehaviour
 }
 ```
 
-```markdown
+
 1. **public class Pala : MonoBehaviour**: This is the class declaration for a C# script named "Pala." The class inherits from MonoBehaviour, which is a Unity class that allows you to attach scripts to GameObjects.
 
 2. **[SerializeField] private float velocidad = 7f**;: This line declares a private float variable named "velocidad" and initializes it with a value of 7. The [SerializeField] attribute indicates that the variable should be visible in the Unity Inspector, allowing you to adjust its value from the Inspector.
@@ -160,7 +160,7 @@ public class Pala : MonoBehaviour
 13. **transform.position = posicionPala;**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
 
 In summary, this script controls the vertical movement of a GameObject (likely a paddle) based on player input. The input controls can be different depending on whether "esPala1" is true or false, allowing for flexibility in controlling the GameObject's movement. The [SerializeField] attribute makes it possible to adjust the speed and control type from the Unity Inspector.
-```
+
 
 
 
