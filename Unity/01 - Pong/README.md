@@ -173,37 +173,35 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
   <details>
   <summary>Why the "velocidad" value comes with a f?</summary>
-  
-    The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
+  The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
 
-    In C#, numeric literals without a suffix are treated as double by default. For example, if you write 7, it's treated as a double. However, Unity's SerializeField attribute expects the type to match exactly with the field type, so if you have a field of type float, it's good practice to add the "f" suffix to indicate that it's a float literal.
+  In C#, numeric literals without a suffix are treated as double by default. For example, if you write 7, it's treated as a double. However, Unity's SerializeField attribute expects the type to match exactly with the field type, so if you have a field of type float, it's good practice to add the "f" suffix to indicate that it's a float literal.
 
-    Here's a breakdown of the line:
+  Here's a breakdown of the line:
 
-    private float velocidad: This declares a private float variable named "velocidad."
-    = 7f;: This initializes the "velocidad" variable with the value 7f, where "7" is the numeric value, and "f" is the suffix indicating that it's a float.
-    Including the "f" suffix makes it clear that "velocidad" is intended to be a float value, and it can help prevent any potential type mismatch issues. In Unity, it's a common practice to use the "f" suffix when working with float variables to improve code readability and maintain consistency in type declarations.
+  private float velocidad: This declares a private float variable named "velocidad."
+  = 7f;: This initializes the "velocidad" variable with the value 7f, where "7" is the numeric value, and "f" is the suffix indicating that it's a float.
+  Including the "f" suffix makes it clear that "velocidad" is intended to be a float value, and it can help prevent any potential type mismatch issues. In Unity, it's a common practice to use the "f" suffix when working with float variables to improve code readability and maintain consistency in type declarations.
   <br>
   </details>
 
   <details>
   <summary>What does this line: movimiento = Input.GetAxisRaw("Vertical");</summary>
-  
-    The line movimiento = Input.GetAxisRaw("Vertical"); is used to read the player's input along the vertical axis in a Unity game. Here's a breakdown of what each part of this line does:
+  The line movimiento = Input.GetAxisRaw("Vertical"); is used to read the player's input along the vertical axis in a Unity game. Here's a breakdown of what each part of this line does:
 
-    movimiento: This is a float variable named "movimiento." It is being assigned a value based on the player's input.
+  movimiento: This is a float variable named "movimiento." It is being assigned a value based on the player's input.
 
-    Input: This is a Unity class that provides access to various input-related functions and properties.
+  Input: This is a Unity class that provides access to various input-related functions and properties.
 
-    GetAxisRaw("Vertical"): This is a method call that retrieves the input along the specified axis. In this case, it's looking for input along the "Vertical" axis.
+  GetAxisRaw("Vertical"): This is a method call that retrieves the input along the specified axis. In this case, it's looking for input along the "Vertical" axis.
 
-    Now, let's dive deeper into what Input.GetAxisRaw("Vertical") does:
+  Now, let's dive deeper into what Input.GetAxisRaw("Vertical") does:
 
-    Input.GetAxisRaw("Vertical"): This function reads the player's input along the specified axis and returns a float value. The "Vertical" axis typically corresponds to vertical input, such as pressing the "up" and "down" arrow keys or using a gamepad's thumbstick in the up and down directions.
+  Input.GetAxisRaw("Vertical"): This function reads the player's input along the specified axis and returns a float value. The "Vertical" axis typically corresponds to vertical input, such as pressing the "up" and "down" arrow keys or using a gamepad's thumbstick in the up and down directions.
 
-    GetAxisRaw: The GetAxisRaw function returns a raw value, which means it provides values of either -1, 0, or 1, depending on whether the input is pressed in a negative direction (e.g., "down" arrow key or pushing the thumbstick down), not pressed at all (0), or pressed in a positive direction (e.g., "up" arrow key or pushing the thumbstick up).
+  GetAxisRaw: The GetAxisRaw function returns a raw value, which means it provides values of either -1, 0, or 1, depending on whether the input is pressed in a negative direction (e.g., "down" arrow key or pushing the thumbstick down), not pressed at all (0), or pressed in a positive direction (e.g., "up" arrow key or pushing the thumbstick up).
 
-    So, after executing Input.GetAxisRaw("Vertical"), the movimiento variable will hold a value of either -1 (for downward input), 0 (for no input), or 1 (for upward input). This value can be used to control the vertical movement of an object in your game, such as moving a paddle up and down based on player input.
+  So, after executing Input.GetAxisRaw("Vertical"), the movimiento variable will hold a value of either -1 (for downward input), 0 (for no input), or 1 (for upward input). This value can be used to control the vertical movement of an object in your game, such as moving a paddle up and down based on player input.
   <br>
   </details>
 </details>
