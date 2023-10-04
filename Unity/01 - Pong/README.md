@@ -142,7 +142,6 @@ public class Pala : MonoBehaviour
 }
 ```
 
-
 1. **public class Pala : MonoBehaviour**: This is the class declaration for a C# script named "Pala." The class inherits from MonoBehaviour, which is a Unity class that allows you to attach scripts to GameObjects.
 
 2. **[SerializeField] private float velocidad = 7f**;: This line declares a private float variable named "velocidad" and initializes it with a value of 7. The [SerializeField] attribute indicates that the variable should be visible in the Unity Inspector, allowing you to adjust its value from the Inspector.
@@ -345,6 +344,53 @@ public class Bola : MonoBehaviour
     }
 }
 ```
+
+1. using System.Collections;: This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
+
+2. using System.Collections.Generic;: This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
+
+3. using UnityEngine;: This line includes the UnityEngine namespace, which provides access to Unity's core functionality.
+
+4. public class Bola : MonoBehaviour: This is the class declaration for a C# script named "Bola." The class inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
+
+5. [SerializeField] private float velocidadInicial = 4f;: This line declares a private float variable named "velocidadInicial" and initializes it with a value of 4. The [SerializeField] attribute allows you to expose this variable in the Unity Inspector.
+
+6. [SerializeField] private float valorDeMultiplicacion = 1.1f;: Similar to the previous line, this line declares another private float variable named "valorDeMultiplicacion" and initializes it with a value of 1.1. It's also marked with [SerializeField] for Inspector visibility.
+
+7. private Rigidbody2D bolaRb;: This declares a private variable of type Rigidbody2D named "bolaRb." It will be used to reference the Rigidbody2D component attached to the GameObject.
+
+8. void Start(): This is the declaration of the "Start" method. In Unity, "Start" is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In this script, the method is used to set up and initialize the "bolaRb" variable and then call the "Lanzar" method.
+
+9. bolaRb = GetComponent<Rigidbody2D>();: This line assigns the "bolaRb" variable by getting the Rigidbody2D component attached to the same GameObject as this script. It uses GetComponent to retrieve the component.
+
+10. Lanzar();: This line calls the "Lanzar" method, which is responsible for initializing the initial velocity of the GameObject.
+
+11. private void Lanzar(): This is the declaration of the "Lanzar" method. It's a custom method used to launch the ball with an initial velocity.
+
+12. float velocidadX = Random.Range(0, 2) == 0 ? 1 : -1;: This line calculates a random horizontal velocity for the ball. It uses Random.Range(0, 2) to generate a random number that's either 0 or 1, and then uses a conditional (ternary) operator to set velocidadX to 1 if the random number is 0, or -1 if it's 1.
+
+13. float velocidadY = Random.Range(0, 2) == 0 ? 1 : -1;: Similar to the previous line, this line calculates a random vertical velocity for the ball.
+
+14. bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;: This line assigns the initial velocity to the Rigidbody2D component of the ball. It creates a Vector2 with the velocidadX and velocidadY values and multiplies it by velocidadInicial.
+
+15. private void OnCollisionEnter2D(Collision2D collision): This is the declaration of the "OnCollisionEnter2D" method, which is called automatically when a collision occurs between the ball and another GameObject that has a collider. This method is used to handle collision events.
+
+16. if (collision.gameObject.CompareTag("PalaTag")): This line checks if the GameObject that the ball collided with has a tag "PalaTag." Tags are used to identify and categorize GameObjects in Unity.
+
+17. bolaRb.velocity *= valorDeMultiplicacion;: If the collision is with an object tagged as "PalaTag," this line multiplies the current velocity of the ball by the "valorDeMultiplicacion." This can be used to increase the speed of the ball upon collision.
+
+18. private void OnTriggerEnter2D(Collider2D collision): This is the declaration of the "OnTriggerEnter2D" method. It's called automatically when the ball enters a trigger collider attached to another GameObject.
+
+19. if (collision.gameObject.CompareTag("GolPala2Tag")): This line checks if the ball has entered a trigger collider with the tag "GolPala2Tag."
+
+20. ControladorJuego.Instance.GolPala1();: If the ball enters the trigger with the "GolPala2Tag" tag, this line calls a method named "GolPala1" on an instance of the "ControladorJuego" class. It appears to be a scoring mechanism.
+
+
+
+
+
+
+
 
 </details>
 
