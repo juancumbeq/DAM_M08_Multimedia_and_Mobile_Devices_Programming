@@ -173,6 +173,7 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
   <details>
   <summary>Why the "velocidad" value comes with a f?</summary>
+  <br>
   The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
 
   In C#, numeric literals without a suffix are treated as double by default. For example, if you write 7, it's treated as a double. However, Unity's SerializeField attribute expects the type to match exactly with the field type, so if you have a field of type float, it's good practice to add the "f" suffix to indicate that it's a float literal.
@@ -184,9 +185,11 @@ In summary, this script controls the vertical movement of a GameObject (likely a
   Including the "f" suffix makes it clear that "velocidad" is intended to be a float value, and it can help prevent any potential type mismatch issues. In Unity, it's a common practice to use the "f" suffix when working with float variables to improve code readability and maintain consistency in type declarations.
   <br>
   </details>
+  <br>
 
   <details>
-  <summary>What does this line: movimiento = Input.GetAxisRaw("Vertical");</summary>
+  <summary>What does this line: movimiento = Input.GetAxisRaw("Vertical"); ?</summary>
+  <br>
   The line movimiento = Input.GetAxisRaw("Vertical"); is used to read the player's input along the vertical axis in a Unity game. Here's a breakdown of what each part of this line does:
 
   movimiento: This is a float variable named "movimiento." It is being assigned a value based on the player's input.
@@ -204,6 +207,76 @@ In summary, this script controls the vertical movement of a GameObject (likely a
   So, after executing Input.GetAxisRaw("Vertical"), the movimiento variable will hold a value of either -1 (for downward input), 0 (for no input), or 1 (for upward input). This value can be used to control the vertical movement of an object in your game, such as moving a paddle up and down based on player input.
   <br>
   </details>
+  <br>
+
+  <details>
+  <summary>What does this line: Vector2 posicionPala = transform.position; ?</summary>
+  <br>
+  The line Vector2 posicionPala = transform.position; is used to create a new Vector2 variable named "posicionPala" and initialize it with the current position of the GameObject to which this script is attached. Let's break down what this line does step by step:
+
+  Vector2 posicionPala: This part declares a new variable named "posicionPala" with the data type Vector2. Vector2 is a type commonly used in Unity to represent 2D positions and directions. In this case, it's being used to store the position of the GameObject in 2D space.
+
+  transform.position: The transform component is a fundamental part of Unity GameObjects. It contains information about the GameObject's position, rotation, and scale. transform.position retrieves the current position of the GameObject in 3D space as a Vector3 (x, y, z).
+
+  Since you're assigning the value of transform.position (a Vector3) to a Vector2 variable, Unity automatically converts the Vector3 to a Vector2 by discarding the z-component, resulting in a 2D position represented by "posicionPala."
+
+  In the context of your script, "posicionPala" is likely used to keep track of the GameObject's position in the 2D space, specifically in the Y-axis, as you can see from the later code where the Y-coordinate is modified based on player input.
+
+  Overall, this line sets up a Vector2 variable to store the current 2D position of the GameObject, which can then be modified or used in various ways within the script.
+  <br>
+  </details>
+  <br>
+
+  <details>
+  <summary>How the "transform" component knows it makes reference to the "Pala" element ?</summary>
+  <br>
+  The "transform" component in Unity always refers to the transform component of the GameObject to which the script is attached. In the script you provided, which is named "Pala," the "transform" component refers to the transform of the GameObject to which this "Pala" script is attached. Here's how it works:
+
+  Script Attachment: You attach scripts to GameObjects in Unity. When you attach the "Pala" script to a GameObject, you are essentially telling Unity that this script is associated with that specific GameObject.
+
+  Accessing Transform: Inside the "Pala" script, when you use the transform keyword, Unity knows to reference the transform component of the GameObject to which the script is attached. It's a built-in reference provided by Unity for every script.
+
+  GameObject Context: Unity maintains a context for each script. When the script executes, it operates within the context of the GameObject to which it's attached. This context includes access to the GameObject's transform, position, rotation, scale, and other components.
+
+  So, you don't need to explicitly specify which GameObject's transform you want to access in the script. Unity takes care of that for you based on the context of the script's attachment. If you attach the "Pala" script to multiple GameObjects, each instance of the script will independently reference the transform of the GameObject it's attached to.
+  <br>
+  </details>
+  <br>
+
+  <details>
+  <summary>What does this line: posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY); ?</summary>
+  <br>
+  The line posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY); is responsible for controlling the vertical position of the GameObject (likely a paddle) within specified limits in a Unity game. Let's break it down step by step:
+
+  posicionPala.y: This part refers to the Y-coordinate of the "posicionPala" Vector2 variable, which represents the current vertical position of the GameObject.
+
+  =: This is the assignment operator, used to assign a new value to the Y-coordinate of "posicionPala."
+
+  Mathf.Clamp(...): This is a function call to Mathf.Clamp, which is a Unity function used to restrict or "clamp" a value within specified minimum and maximum limits.
+
+  posicionPala.y + movimiento * velocidad * Time.deltaTime: Inside the Mathf.Clamp function, this expression calculates the new Y-coordinate for "posicionPala." It starts with the current Y-coordinate and adds a value that depends on player input ("movimiento"), speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime").
+
+  movimiento: This is a float value that typically represents player input for vertical movement. It can be -1 (for downward input), 0 (for no input), or 1 (for upward input).
+
+  velocidad: This float value likely represents the speed at which the GameObject moves vertically.
+
+  Time.deltaTime: This is the time in seconds it took to complete the last frame. It's used to ensure smooth and frame-rate-independent movement.
+
+  -limiteY, limiteY: These are the minimum and maximum limits for the Y-coordinate. The GameObject's vertical position is clamped between these two values.
+
+  Here's what this line does:
+
+  It calculates a new potential Y-coordinate for the "posicionPala" based on the current position, player input, speed, and frame time.
+
+  It then uses Mathf.Clamp to ensure that this new Y-coordinate remains within the specified vertical limits defined by -limiteY and limiteY.
+
+  The result is that the GameObject's vertical position is updated based on player input, but it cannot go beyond the defined limits. This ensures that the GameObject stays within a specific vertical range.
+
+  This line of code is commonly used for implementing vertical movement for game objects such as paddles, characters, or any element that needs to be constrained within certain boundaries in a 2D Unity game.
+  <br>
+  </details>
+  <br>
+
 </details>
 
 
