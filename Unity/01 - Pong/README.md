@@ -67,7 +67,7 @@ Today, the Pong Game is considered to be the game which started the video games 
 
 ## The Ball Phisics
 <details>
-<summary></summary>
+<summary>See more...</summary>
       
   - The default Phisics rules can cause a lost of energy during the impacts, so to change that we can create a **Physics Material 2D** that prevents by modifying the Friction and the Bounciness value.
   <p align="center">
