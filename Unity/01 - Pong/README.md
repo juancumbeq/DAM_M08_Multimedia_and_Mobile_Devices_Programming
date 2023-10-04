@@ -67,6 +67,8 @@ Today, the Pong Game is considered to be the game which started the video games 
 
 ## The Ball Phisics
 
+<summary><h3></h3></summary>
+      
 - The default Phisics rules can cause a lost of energy during the impacts, so to change that we can create a **Physics Material 2D** that prevents by modifying the Friction and the Bounciness value.
 <p align="center">
   <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial.png?raw=true" height="350" title="Pong">
@@ -79,6 +81,10 @@ Today, the Pong Game is considered to be the game which started the video games 
 <p align="center">
   <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/RigidBodyBola.png?raw=true" height="350" title="Pong">
 </p>
+
+</details>
+
+
 
 ## Pala Physics
 
@@ -163,5 +169,12 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
 
 
+
+
+
+
+
+
+****
 
 Feel free to download or fork this repo and explore the files and undertstand how I made this project.
