@@ -186,15 +186,15 @@ public class Pala : MonoBehaviour
 
   <br>
 
-1. **`public class Pala : MonoBehaviour`**: This is the class declaration for a C# script named "Pala." The class inherits from MonoBehaviour, which is a Unity class that allows you to attach scripts to GameObjects.
+1. **`public class Pala : MonoBehaviour`** : This is the class declaration for a C# script named "Pala." The class inherits from MonoBehaviour, which is a Unity class that allows you to attach scripts to GameObjects.
 
-2. **[SerializeField] private float velocidad = 7f**;: This line declares a private float variable named "velocidad" and initializes it with a value of 7. The [SerializeField] attribute indicates that the variable should be visible in the Unity Inspector, allowing you to adjust its value from the Inspector.
+2. **`[SerializeField] private float velocidad = 7f;`** : This line declares a private float variable named "velocidad" and initializes it with a value of 7. The [SerializeField] attribute indicates that the variable should be visible in the Unity Inspector, allowing you to adjust its value from the Inspector.
 
-3. **[SerializeField] private bool esPala1;**: Similar to the previous line, this line declares a private boolean variable named "esPala1" and initializes it without a value. It's also marked with [SerializeField], making it editable in the Unity Inspector.
+3. **`[SerializeField] private bool esPala1;`** : Similar to the previous line, this line declares a private boolean variable named "esPala1" and initializes it without a value. It's also marked with [SerializeField], making it editable in the Unity Inspector.
 
-4. **private float limiteY = 3.75f**;: This line declares a private float variable named "limiteY" and initializes it with a value of 3.75. This variable represents the vertical limit in the Y-axis.
+4. **`private float limiteY = 3.75f;`** : This line declares a private float variable named "limiteY" and initializes it with a value of 3.75. This variable represents the vertical limit in the Y-axis.
 
-5. **void Start()**: This is the declaration of a method named "Start." In Unity, the "Start" method is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In the provided code, the method is empty, so it doesn't contain any code.
+5. **`void Start()`**: This is the declaration of a method named "Start." In Unity, the "Start" method is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In the provided code, the method is empty, so it doesn't contain any code.
 
 6. **void Update()**: This is the declaration of the "Update" method. In Unity, "Update" is called once per frame. In this script, the "Update" method contains the logic for moving the GameObject (likely a paddle) based on player input.
 
