@@ -126,6 +126,13 @@ Today, the Pong Game is considered to be the game which started the video games 
   <summary>See more...</summary>
   <br>
 
+  <p align="center">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PalaScript.png?raw=true" width="100%" title="Pong">
+  </p>
+  <p align="center">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PalaScript.png?raw=true" width="100%" title="Pong">
+  </p>
+
 - The movement of **Pala1** and **Pala2** is determined by the C# Script. This file, as the PhysicMaterial, is created in the Project window.
 
 - The Script is added to the elements just by drag and drop
@@ -321,6 +328,13 @@ This line of code is commonly used for implementing vertical movement for game o
   <summary>See more...</summary>
   <br>
 
+  <p align="center">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/BolaScript.png?raw=true" width="100%" title="Pong">
+  </p>
+  <p align="center">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/BolaScript2.png?raw=true" width="100%" title="Pong">
+  </p>
+
 - As we did with the paddles, a new C# script must be created to design the ball movement
 
 ```csharp
@@ -454,6 +468,10 @@ In summary, this line combines the horizontal and vertical components (determine
 <details>
   <summary>See more...</summary>
   <br>
+
+  <p align="center">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/ControladorScript.png?raw=true" width="100%" title="Pong">
+  </p>
 
 - This Script is a handler of issues such as the counters and the resetting of the initial position of the game for both the ball and the paddles.
 
@@ -603,7 +621,7 @@ So, even though instance is null initially, the call to FindObjectOfType is prec
 
   </details>
   <br>
-  
+
 </details>
 <br>
 <br>
