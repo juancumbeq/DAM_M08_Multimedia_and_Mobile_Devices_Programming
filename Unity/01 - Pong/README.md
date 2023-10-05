@@ -441,21 +441,21 @@ The line `bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInici
 
 `velocidadY`: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
 
-- velocidadInicial: After creating the Vector2 with the desired direction, this line multiplies it by the "velocidadInicial" variable. "velocidadInicial" likely represents the initial speed or magnitude of the velocity that you want to give to the GameObject.
+velocidadInicial: After creating the Vector2 with the desired direction, this line multiplies it by the "velocidadInicial" variable. "velocidadInicial" likely represents the initial speed or magnitude of the velocity that you want to give to the GameObject.
 
 In summary, this line combines the horizontal and vertical components (determined by "velocidadX" and "velocidadY") and multiplies them by "velocidadInicial" to set the velocity of the Rigidbody2D component. This action effectively gives the GameObject a starting velocity, determining its initial movement direction and speed in the 2D space of the Unity game.
-<br>
 
   </details>
+  <br>
 </details>
 
 ## Game Controller (Code)
 
 <details>
   <summary>See more...</summary>
+  <br>
 
 - This Script is a handler of issues such as the counters and the resetting of the initial position of the game for both the ball and the paddles.
-  <br>
 
 ```csharp
 using System.Collections;
@@ -513,6 +513,8 @@ public class ControladorJuego : MonoBehaviour
 }
 ```
 
+  <br>
+
 1. **using System.Collections;** : This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
 
 2. **using System.Collections.Generic;** : This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
@@ -541,14 +543,15 @@ public class ControladorJuego : MonoBehaviour
 
 14. **public void Reiniciar()**: This method is used to reset the positions of the paddles and the ball when a point or goal is scored. It sets their positions to specific coordinates.
 
+  <br>
 In summary, this script manages the game's scoring system, updates the scores displayed on the screen, and provides methods to reset the positions of game elements. It also employs the
-<br>
-<br>
+  <br>
+  <br>
 
-<details>
+  <details>
   <summary>What is the Singleton Pattern</summary>
   <br>
-  The lines you provided implement the Singleton design pattern in the "ControladorJuego" class. The Singleton pattern ensures that a class has only one instance and provides a way to access that instance from any point in your code. Let's break down the code and explain the Singleton pattern step by step:
+The lines you provided implement the Singleton design pattern in the "ControladorJuego" class. The Singleton pattern ensures that a class has only one instance and provides a way to access that instance from any point in your code. Let's break down the code and explain the Singleton pattern step by step:
 
 private static ControladorJuego instance;: This line declares a private static variable named "instance" of type "ControladorJuego." This variable will hold the single instance of the "ControladorJuego" class.
 
@@ -560,7 +563,7 @@ When you access ControladorJuego.Instance, you are requesting the single instanc
 
 If the "instance" variable is null, it means that no instance of the "ControladorJuego" class exists yet.
 
-In that case, instance = FindObjectOfType<ControladorJuego>(); is used to find an existing instance of the "ControladorJuego" class in the scene. The FindObjectOfType method searches for objects of a specified type in the current scene.
+In that case, `instance = FindObjectOfType<ControladorJuego>();`` is used to find an existing instance of the "ControladorJuego" class in the scene. The FindObjectOfType method searches for objects of a specified type in the current scene.
 
 If an instance is found, it's assigned to the "instance" variable.
 
@@ -577,15 +580,14 @@ Initialization on Demand: The instance is only created when it's first accessed.
 Centralized Control: In many game scenarios, having a single point of control for certain functionalities, like managing scores or game state, can simplify the code and prevent issues that could arise from multiple instances.
 
 In summary, the Singleton pattern ensures that there's exactly one instance of a class, provides a way to access that instance globally, and initializes the instance when it's first needed. It's a common design pattern used in game development and other software applications for managing shared resources and centralizing control.
-<br>
 
-</details>
-<br>
-
-<details>
-  <summary>How is it posible that FindObjectType can find an instance if instance == null</summary>
+  </details>
   <br>
-  When instance is null, FindObjectOfType is used to search for an instance of the ControladorJuego class in the current scene. If instance is null, it means that an instance of ControladorJuego has not been created yet. The search with FindObjectOfType is performed to find any object in the scene that is an instance of ControladorJuego and assign that instance to the instance variable.
+
+  <details>
+  <summary>How is it posible that FindObjectType can find an instance if <code> instance == null </code> </summary>
+  <br>
+When instance is null, F`indObjectOfType`` is used to search for an instance of the ControladorJuego class in the current scene. If instance is null, it means that an instance of ControladorJuego has not been created yet. The search with FindObjectOfType is performed to find any object in the scene that is an instance of ControladorJuego and assign that instance to the instance variable.
 
 Here's how it works:
 
@@ -598,10 +600,10 @@ FindObjectOfType searches the current scene, and if it finds an object of type C
 From that point onward, instance is no longer null, and the same instance is returned every time you access ControladorJuego.Instance.
 
 So, even though instance is null initially, the call to FindObjectOfType is precisely to find or create an instance, and once found or created, that instance is stored in instance for subsequent access. This ensures that, from that point on, the same instance of ControladorJuego will always be returned wherever you access ControladorJuego.Instance.
-<br>
 
-</details>
-<br>
+  </details>
+  <br>
+  
 </details>
 <br>
 <br>
