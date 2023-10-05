@@ -423,21 +423,23 @@ public class Bola : MonoBehaviour
 19. **if (collision.gameObject.CompareTag("GolPala2Tag"))**: This line checks if the ball has entered a trigger collider with the tag "GolPala2Tag."
 
 20. **ControladorJuego.Instance.GolPala1();** : If the ball enters the trigger with the "GolPala2Tag" tag, this line calls a method named "GolPala1" on an instance of the "ControladorJuego" class. It appears to be a scoring mechanism.
+
   <br>
   <br>
 
   <details>
   <summary>What does this line: <code> bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; </code> ?</summary>
   <br>
-The line ``bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;`` is used to set the velocity of the Rigidbody2D component attached to the GameObject (presumably a ball) in a 2D Unity game. Let's break down what this line does:
+  
+The line `bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;` is used to set the velocity of the Rigidbody2D component attached to the GameObject (presumably a ball) in a 2D Unity game. Let's break down what this line does:
 
-``bolaRb.velocity``: This part accesses the velocity property of the Rigidbody2D component named "bolaRb." The Rigidbody2D component is responsible for controlling the physics behavior of the GameObject, including its movement.
+`bolaRb.velocity`: This part accesses the velocity property of the Rigidbody2D component named "bolaRb." The Rigidbody2D component is responsible for controlling the physics behavior of the GameObject, including its movement.
 
-``new Vector2(velocidadX, velocidadY)``: This part creates a new 2D vector (Vector2) with horizontal and vertical components specified by the variables "velocidadX" and "velocidadY." These components determine the direction and magnitude of the velocity.
+`new Vector2(velocidadX, velocidadY)`: This part creates a new 2D vector (Vector2) with horizontal and vertical components specified by the variables "velocidadX" and "velocidadY." These components determine the direction and magnitude of the velocity.
 
-``velocidadX``: This variable holds a value that represents the horizontal component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement to the right or left.
+`velocidadX`: This variable holds a value that represents the horizontal component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement to the right or left.
 
-``velocidadY``: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
+`velocidadY`: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
 
 - velocidadInicial: After creating the Vector2 with the desired direction, this line multiplies it by the "velocidadInicial" variable. "velocidadInicial" likely represents the initial speed or magnitude of the velocity that you want to give to the GameObject.
 
