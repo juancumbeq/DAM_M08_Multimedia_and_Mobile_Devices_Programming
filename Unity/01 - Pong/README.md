@@ -77,7 +77,7 @@ Today, the Pong Game is considered to be the game which started the video games 
 <details>
   <summary>See more...</summary>
   <br>
-  
+
   - Rigidbodies enable your GameObjects to act under the control of physics. The Rigidbody can receive forces and torque to make your objects move in a realistic way. Any GameObject must contain a Rigidbody to be influenced by gravity, act under added forces via scripting, or interact with other objects through the NVIDIA PhysX physics engine.
   
   <br>
@@ -107,7 +107,6 @@ Today, the Pong Game is considered to be the game which started the video games 
   <p align="center">
     <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial.png?raw=true" width="90%" title="Pong">
   </p>
-  <br>
   <p align="center">
     <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial2.png?raw=true" width="90%" title="Pong">
   </p>
@@ -640,6 +639,6 @@ So, even though instance is null initially, the call to FindObjectOfType is prec
 
 <div align="center">
 
-### 🤓 Feel free to download or forking this repo and explore the files and undertstand how I made this project.
+### 🤓 Feel free to download or forking this repo, explore the files and undertstand how I made this project.
 
 </div>
