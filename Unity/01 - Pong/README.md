@@ -77,6 +77,7 @@ Today, the Pong Game is considered to be the game which started the video games 
 <details>
   <summary>See more...</summary>
   <br>
+  
   - Rigidbodies enable your GameObjects to act under the control of physics. The Rigidbody can receive forces and torque to make your objects move in a realistic way. Any GameObject must contain a Rigidbody to be influenced by gravity, act under added forces via scripting, or interact with other objects through the NVIDIA PhysX physics engine.
   
   <br>
