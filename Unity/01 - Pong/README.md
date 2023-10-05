@@ -474,40 +474,93 @@ public class ControladorJuego : MonoBehaviour
 }
 ```
 
-1. using System.Collections;: This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
+1. **using System.Collections;** : This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
 
-2. using System.Collections.Generic;: This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
+2. **using System.Collections.Generic;** : This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
 
-3. using UnityEngine;: This line includes the UnityEngine namespace, which provides access to Unity's core functionality.
+3. **using UnityEngine;** : This line includes the UnityEngine namespace, which provides access to Unity's core functionality.
 
-4. using TMPro;: This line includes the TMPro namespace, which is used for handling TextMeshPro text components in Unity, commonly used for UI text.
+4. **using TMPro;** : This line includes the TMPro namespace, which is used for handling TextMeshPro text components in Unity, commonly used for UI text.
 
-5. public class ControladorJuego : MonoBehaviour: This is the class declaration for a C# script named "ControladorJuego." It inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
+5. **public class ControladorJuego : MonoBehaviour**: This is the class declaration for a C# script named "ControladorJuego." It inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
 
-6. [SerializeField] private TMP_Text marcadorPala1;: This line declares a private field of type TMP_Text named "marcadorPala1." It's marked with [SerializeField] to make it visible in the Unity Inspector, allowing you to assign TextMeshPro text components to it.
+6. **[SerializeField] private TMP_Text marcadorPala1;** : This line declares a private field of type TMP_Text named "marcadorPala1." It's marked with [SerializeField] to make it visible in the Unity Inspector, allowing you to assign TextMeshPro text components to it.
 
-7. [SerializeField] private TMP_Text marcadorPala2;: Similar to the previous line, this declares a field for the second player's score.
+7. **[SerializeField] private TMP_Text marcadorPala2;** : Similar to the previous line, this declares a field for the second player's score.
 
-8. [SerializeField] private Transform pala1Transform;: These lines declare fields for the transform components of the paddles and the ball. They are used to reset the positions of these objects.
+8. **[SerializeField] private Transform pala1Transform;** : These lines declare fields for the transform components of the paddles and the ball. They are used to reset the positions of these objects.
 
-9. private int golesPala1, golesPala2;: These lines declare private integer variables to store the scores for player 1 and player 2.
+9. **private int golesPala1, golesPala2;** : These lines declare private integer variables to store the scores for player 1 and player 2.
 
-10. private static ControladorJuego instance;: This line declares a private static variable named "instance" of type "ControladorJuego." This is part of the Singleton design pattern used to ensure there is only one instance of this script.
+10. **private static ControladorJuego instance;** : This line declares a private static variable named "instance" of type "ControladorJuego." This is part of the Singleton design pattern used to ensure there is only one instance of this script.
 
-11. public static ControladorJuego Instance: This is a property (getter) that provides access to the "instance" variable. It ensures that there's only one instance of "ControladorJuego" throughout the game. If there isn't an instance, it tries to find one using FindObjectOfType.
+11. **public static ControladorJuego Instance**: This is a property (getter) that provides access to the "instance" variable. It ensures that there's only one instance of "ControladorJuego" throughout the game. If there isn't an instance, it tries to find one using FindObjectOfType.
 
-12. public void GolPala1(): This declares a public method named "GolPala1," which is used to update the score for player 1.
+12.** public void GolPala1()**: This declares a public method named "GolPala1," which is used to update the score for player 1.
 
-13. public void GolPala2(): Similar to the previous line, this declares a method to update the score for player 2.
+13. **public void GolPala2()**: Similar to the previous line, this declares a method to update the score for player 2.
 
-14. public void Reiniciar(): This method is used to reset the positions of the paddles and the ball when a point or goal is scored. It sets their positions to specific coordinates.
-
-15. The script concludes with the closing braces for the class and the namespace.
+14. **public void Reiniciar()**: This method is used to reset the positions of the paddles and the ball when a point or goal is scored. It sets their positions to specific coordinates.
 
 In summary, this script manages the game's scoring system, updates the scores displayed on the screen, and provides methods to reset the positions of game elements. It also employs the
+<br>
+<br>
 
+<details>
+  <summary>What is the Singleton Pattern</summary>
+  <br>
+  The lines you provided implement the Singleton design pattern in the "ControladorJuego" class. The Singleton pattern ensures that a class has only one instance and provides a way to access that instance from any point in your code. Let's break down the code and explain the Singleton pattern step by step:
 
+  private static ControladorJuego instance;: This line declares a private static variable named "instance" of type "ControladorJuego." This variable will hold the single instance of the "ControladorJuego" class.
 
+  public static ControladorJuego Instance: This is a public property with a getter. It provides access to the "instance" variable, allowing other parts of the code to access the single instance of the "ControladorJuego" class.
+
+  Now, let's explain how the Singleton pattern is implemented:
+
+  When you access ControladorJuego.Instance, you are requesting the single instance of the class.
+
+  If the "instance" variable is null, it means that no instance of the "ControladorJuego" class exists yet.
+
+  In that case, instance = FindObjectOfType<ControladorJuego>(); is used to find an existing instance of the "ControladorJuego" class in the scene. The FindObjectOfType method searches for objects of a specified type in the current scene.
+
+  If an instance is found, it's assigned to the "instance" variable.
+
+  Finally, the "instance" variable is returned, providing access to the single instance of the "ControladorJuego" class.
+
+  Here's why the Singleton pattern is used:
+
+  Single Instance: It ensures that there is only one instance of the "ControladorJuego" class throughout the lifetime of the game.
+
+  Global Access: By making the instance accessible through ControladorJuego.Instance, you can access the class's functionality and data from any part of your code without needing to pass references between objects or create multiple instances.
+
+  Initialization on Demand: The instance is only created when it's first accessed. This can be helpful for managing resources efficiently.
+
+  Centralized Control: In many game scenarios, having a single point of control for certain functionalities, like managing scores or game state, can simplify the code and prevent issues that could arise from multiple instances.
+
+  In summary, the Singleton pattern ensures that there's exactly one instance of a class, provides a way to access that instance globally, and initializes the instance when it's first needed. It's a common design pattern used in game development and other software applications for managing shared resources and centralizing control.
+  <br>
+</details>
+<br>
+
+<details>
+  <summary>How is it posible that FindObjectType can find an instance if instance == null</summary>
+  <br>
+  When instance is null, FindObjectOfType is used to search for an instance of the ControladorJuego class in the current scene. If instance is null, it means that an instance of ControladorJuego has not been created yet. The search with FindObjectOfType is performed to find any object in the scene that is an instance of ControladorJuego and assign that instance to the instance variable.
+
+  Here's how it works:
+
+  At the beginning of the game, the instance variable is set to null.
+
+  When ControladorJuego.Instance is called for the first time, it checks if instance is null. Since it is initially null, it triggers the search in the scene using FindObjectOfType.
+
+  FindObjectOfType searches the current scene, and if it finds an object of type ControladorJuego, it assigns that object to instance. This creates an instance if there isn't one in the scene.
+
+  From that point onward, instance is no longer null, and the same instance is returned every time you access ControladorJuego.Instance.
+
+  So, even though instance is null initially, the call to FindObjectOfType is precisely to find or create an instance, and once found or created, that instance is stored in instance for subsequent access. This ensures that, from that point on, the same instance of ControladorJuego will always be returned wherever you access ControladorJuego.Instance.
+  <br>
+</details>
+<br>
 
 
 </details>
