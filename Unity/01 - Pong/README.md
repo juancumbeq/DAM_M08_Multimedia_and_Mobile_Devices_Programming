@@ -206,13 +206,14 @@ public class Pala : MonoBehaviour
 13. **transform.position = posicionPala;**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
 
   <br>
-  In summary, this script controls the vertical movement of a GameObject (likely a paddle) based on player input. The input controls can be different depending on whether "esPala1" is true or false, allowing for flexibility in controlling the GameObject's movement. The [SerializeField] attribute makes it possible to adjust the speed and control type from the Unity Inspector.
+In summary, this script controls the vertical movement of a GameObject (likely a paddle) based on player input. The input controls can be different depending on whether "esPala1" is true or false, allowing for flexibility in controlling the GameObject's movement. The [SerializeField] attribute makes it possible to adjust the speed and control type from the Unity Inspector.
+  <br>
+  <br>
 
-  <br>
   <details>
-  <summary>Why the "velocidad" value comes with a f?</summary>
+  <summary>Why the "velocidad" value comes with a <code>f</code> ?</summary>
   <br>
-  The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
+The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
 
 In C#, numeric literals without a suffix are treated as double by default. For example, if you write 7, it's treated as a double. However, Unity's SerializeField attribute expects the type to match exactly with the field type, so if you have a field of type float, it's good practice to add the "f" suffix to indicate that it's a float literal.
 
@@ -221,7 +222,6 @@ Here's a breakdown of the line:
 private float velocidad: This declares a private float variable named "velocidad."
 = 7f;: This initializes the "velocidad" variable with the value 7f, where "7" is the numeric value, and "f" is the suffix indicating that it's a float.
 Including the "f" suffix makes it clear that "velocidad" is intended to be a float value, and it can help prevent any potential type mismatch issues. In Unity, it's a common practice to use the "f" suffix when working with float variables to improve code readability and maintain consistency in type declarations.
-<br>
 
   </details>
   <br>
@@ -229,7 +229,7 @@ Including the "f" suffix makes it clear that "velocidad" is intended to be a flo
   <details>
   <summary>What does this line: <code>movimiento = Input.GetAxisRaw("Vertical");</code> ? </summary>
   <br>
-  The line movimiento = Input.GetAxisRaw("Vertical"); is used to read the player's input along the vertical axis in a Unity game. Here's a breakdown of what each part of this line does:
+The line movimiento = Input.GetAxisRaw("Vertical"); is used to read the player's input along the vertical axis in a Unity game. Here's a breakdown of what each part of this line does:
 
 movimiento: This is a float variable named "movimiento." It is being assigned a value based on the player's input.
 
@@ -244,15 +244,14 @@ Input.GetAxisRaw("Vertical"): This function reads the player's input along the s
 GetAxisRaw: The GetAxisRaw function returns a raw value, which means it provides values of either -1, 0, or 1, depending on whether the input is pressed in a negative direction (e.g., "down" arrow key or pushing the thumbstick down), not pressed at all (0), or pressed in a positive direction (e.g., "up" arrow key or pushing the thumbstick up).
 
 So, after executing Input.GetAxisRaw("Vertical"), the movimiento variable will hold a value of either -1 (for downward input), 0 (for no input), or 1 (for upward input). This value can be used to control the vertical movement of an object in your game, such as moving a paddle up and down based on player input.
-<br>
 
   </details>
   <br>
 
   <details>
-  <summary>What does this line: Vector2 posicionPala = transform.position; ?</summary>
+  <summary>What does this line: <code>Vector2 posicionPala = transform.position;</code> ?</summary>
   <br>
-  The line Vector2 posicionPala = transform.position; is used to create a new Vector2 variable named "posicionPala" and initialize it with the current position of the GameObject to which this script is attached. Let's break down what this line does step by step:
+The line <code>Vector2 posicionPala = transform.position;</code> is used to create a new Vector2 variable named "posicionPala" and initialize it with the current position of the GameObject to which this script is attached. Let's break down what this line does step by step:
 
 Vector2 posicionPala: This part declares a new variable named "posicionPala" with the data type Vector2. Vector2 is a type commonly used in Unity to represent 2D positions and directions. In this case, it's being used to store the position of the GameObject in 2D space.
 
@@ -263,15 +262,14 @@ Since you're assigning the value of transform.position (a Vector3) to a Vector2 
 In the context of your script, "posicionPala" is likely used to keep track of the GameObject's position in the 2D space, specifically in the Y-axis, as you can see from the later code where the Y-coordinate is modified based on player input.
 
 Overall, this line sets up a Vector2 variable to store the current 2D position of the GameObject, which can then be modified or used in various ways within the script.
-<br>
 
-    </details>
-    <br>
+  </details>
+  <br>
 
-    <details>
-    <summary>How the "transform" component knows it makes reference to the "Pala" element ?</summary>
-    <br>
-    The "transform" component in Unity always refers to the transform component of the GameObject to which the script is attached. In the script you provided, which is named "Pala," the "transform" component refers to the transform of the GameObject to which this "Pala" script is attached. Here's how it works:
+  <details>
+  <summary>How the "transform" component knows it makes reference to the "Pala" element ?</summary>
+  <br>
+The "transform" component in Unity always refers to the transform component of the GameObject to which the script is attached. In the script you provided, which is named "Pala," the "transform" component refers to the transform of the GameObject to which this "Pala" script is attached. Here's how it works:
 
 Script Attachment: You attach scripts to GameObjects in Unity. When you attach the "Pala" script to a GameObject, you are essentially telling Unity that this script is associated with that specific GameObject.
 
@@ -280,23 +278,20 @@ Accessing Transform: Inside the "Pala" script, when you use the transform keywor
 GameObject Context: Unity maintains a context for each script. When the script executes, it operates within the context of the GameObject to which it's attached. This context includes access to the GameObject's transform, position, rotation, scale, and other components.
 
 So, you don't need to explicitly specify which GameObject's transform you want to access in the script. Unity takes care of that for you based on the context of the script's attachment. If you attach the "Pala" script to multiple GameObjects, each instance of the script will independently reference the transform of the GameObject it's attached to.
-<br>
 
   </details>
   <br>
 
   <details>
-  <summary>What does this line: posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY); ?</summary>
+  <summary>What does this line: <code>posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY);</code> ?</summary>
   <br>
-  The line posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY); is responsible for controlling the vertical position of the GameObject (likely a paddle) within specified limits in a Unity game. Let's break it down step by step:
+The line <code>posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY);</code> is responsible for controlling the vertical position of the GameObject (likely a paddle) within specified limits in a Unity game. Let's break it down step by step:
 
 posicionPala.y: This part refers to the Y-coordinate of the "posicionPala" Vector2 variable, which represents the current vertical position of the GameObject.
 
-=: This is the assignment operator, used to assign a new value to the Y-coordinate of "posicionPala."
-
 Mathf.Clamp(...): This is a function call to Mathf.Clamp, which is a Unity function used to restrict or "clamp" a value within specified minimum and maximum limits.
 
-posicionPala.y + movimiento _ velocidad _ Time.deltaTime: Inside the Mathf.Clamp function, this expression calculates the new Y-coordinate for "posicionPala." It starts with the current Y-coordinate and adds a value that depends on player input ("movimiento"), speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime").
+`posicionPala.y + movimiento _ velocidad _ Time.deltaTime``: Inside the Mathf.Clamp function, this expression calculates the new Y-coordinate for "posicionPala." It starts with the current Y-coordinate and adds a value that depends on player input ("movimiento"), speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime").
 
 movimiento: This is a float value that typically represents player input for vertical movement. It can be -1 (for downward input), 0 (for no input), or 1 (for upward input).
 
@@ -315,18 +310,16 @@ It then uses Mathf.Clamp to ensure that this new Y-coordinate remains within the
 The result is that the GameObject's vertical position is updated based on player input, but it cannot go beyond the defined limits. This ensures that the GameObject stays within a specific vertical range.
 
 This line of code is commonly used for implementing vertical movement for game objects such as paddles, characters, or any element that needs to be constrained within certain boundaries in a 2D Unity game.
-<br>
 
-    </details>
-    <br>
-
+  </details>
+  <br>
 </details>
 
 ## Ball Movement (Code)
 
 <details>
-<summary>See more...</summary>
-<br>
+  <summary>See more...</summary>
+  <br>
 
 - As we did with the paddles, a new C# script must be created to design the ball movement
 
@@ -389,6 +382,8 @@ public class Bola : MonoBehaviour
 }
 ```
 
+  <br>
+
 1. **using System.Collections;** : This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
 
 2. **using System.Collections.Generic;** : This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
@@ -428,21 +423,21 @@ public class Bola : MonoBehaviour
 19. **if (collision.gameObject.CompareTag("GolPala2Tag"))**: This line checks if the ball has entered a trigger collider with the tag "GolPala2Tag."
 
 20. **ControladorJuego.Instance.GolPala1();** : If the ball enters the trigger with the "GolPala2Tag" tag, this line calls a method named "GolPala1" on an instance of the "ControladorJuego" class. It appears to be a scoring mechanism.
-    <br>
-    <br>
+  <br>
+  <br>
 
   <details>
-  <summary>What does this line: bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; ?</summary>
+  <summary>What does this line: <code> bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; </code> ?</summary>
   <br>
-  The line bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; is used to set the velocity of the Rigidbody2D component attached to the GameObject (presumably a ball) in a 2D Unity game. Let's break down what this line does:
+The line ``bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;`` is used to set the velocity of the Rigidbody2D component attached to the GameObject (presumably a ball) in a 2D Unity game. Let's break down what this line does:
 
-bolaRb.velocity: This part accesses the velocity property of the Rigidbody2D component named "bolaRb." The Rigidbody2D component is responsible for controlling the physics behavior of the GameObject, including its movement.
+``bolaRb.velocity``: This part accesses the velocity property of the Rigidbody2D component named "bolaRb." The Rigidbody2D component is responsible for controlling the physics behavior of the GameObject, including its movement.
 
-new Vector2(velocidadX, velocidadY): This part creates a new 2D vector (Vector2) with horizontal and vertical components specified by the variables "velocidadX" and "velocidadY." These components determine the direction and magnitude of the velocity.
+``new Vector2(velocidadX, velocidadY)``: This part creates a new 2D vector (Vector2) with horizontal and vertical components specified by the variables "velocidadX" and "velocidadY." These components determine the direction and magnitude of the velocity.
 
-velocidadX: This variable holds a value that represents the horizontal component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement to the right or left.
+``velocidadX``: This variable holds a value that represents the horizontal component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement to the right or left.
 
-velocidadY: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
+``velocidadY``: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
 
 - velocidadInicial: After creating the Vector2 with the desired direction, this line multiplies it by the "velocidadInicial" variable. "velocidadInicial" likely represents the initial speed or magnitude of the velocity that you want to give to the GameObject.
 
