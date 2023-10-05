@@ -196,31 +196,33 @@ public class Pala : MonoBehaviour
 
 5. **`void Start()`**: This is the declaration of a method named "Start." In Unity, the "Start" method is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In the provided code, the method is empty, so it doesn't contain any code.
 
-6. **void Update()**: This is the declaration of the "Update" method. In Unity, "Update" is called once per frame. In this script, the "Update" method contains the logic for moving the GameObject (likely a paddle) based on player input.
+6. **`void Update()`**: This is the declaration of the "Update" method. In Unity, "Update" is called once per frame. In this script, the "Update" method contains the logic for moving the GameObject (likely a paddle) based on player input.
 
-7. **float movimiento;**: This line declares a float variable named "movimiento" without initializing it. It will be used to store the player's input for vertical movement.
+7. **`float movimiento;`**: This line declares a float variable named "movimiento" without initializing it. It will be used to store the player's input for vertical movement.
 
-8. **if (esPala1) { ... } else { ... }**: This is an if-else statement that checks the value of the "esPala1" variable. If it's true, it executes the code inside the first block (between the curly braces), otherwise, it executes the code inside the second block. This allows for different input controls based on whether "esPala1" is true or false.
+8. **`if (esPala1) { ... } else { ... }`**: This is an if-else statement that checks the value of the "esPala1" variable. If it's true, it executes the code inside the first block (between the curly braces), otherwise, it executes the code inside the second block. This allows for different input controls based on whether "esPala1" is true or false.
 
-9. **movimiento = Input.GetAxisRaw("Vertical");**: This line sets the "movimiento" variable based on player input. If "esPala1" is true, it reads input from the vertical axis labeled as "Vertical," which typically corresponds to the "up" and "down" arrow keys.
+9. **`movimiento = Input.GetAxisRaw("Vertical");`**: This line sets the "movimiento" variable based on player input. If "esPala1" is true, it reads input from the vertical axis labeled as "Vertical," which typically corresponds to the "up" and "down" arrow keys.
 
-10. **movimiento = Input.GetAxisRaw("Vertical2");**: If "esPala1" is false, this line reads input from the "Vertical2" axis, which could correspond to other keys or input methods.
+10. **`movimiento = Input.GetAxisRaw("Vertical2");`**: If "esPala1" is false, this line reads input from the "Vertical2" axis, which could correspond to other keys or input methods.
 
-11. **Vector2 posicionPala = transform.position;**: This line creates a Vector2 variable named "posicionPala" and initializes it with the current position of the GameObject to which this script is attached.
+11. **`Vector2 posicionPala = transform.position;`**: This line creates a Vector2 variable named "posicionPala" and initializes it with the current position of the GameObject to which this script is attached.
 
-12. **posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento _ velocidad _ Time.deltaTime, -limiteY, limiteY);**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY". We need to use limits because the RigidBody with Kinematic mode does not detects the collisions with the ceiling and floor.
+12. **`posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento _ velocidad _ Time.deltaTime, -limiteY, limiteY);`**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY". We need to use limits because the RigidBody with Kinematic mode does not detects the collisions with the ceiling and floor.
 
-13. **transform.position = posicionPala;**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
+13. **`transform.position = posicionPala;`**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
 
   <br>
 In summary, this script controls the vertical movement of a GameObject (likely a paddle) based on player input. The input controls can be different depending on whether "esPala1" is true or false, allowing for flexibility in controlling the GameObject's movement. The [SerializeField] attribute makes it possible to adjust the speed and control type from the Unity Inspector.
+  <br>
   <br>
   <br>
 
   <details>
   <summary>Why the "velocidad" value comes with a <code>f</code> ?</summary>
   <br>
-The "f" suffix you see in the line [SerializeField] private float velocidad = 7f; is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
+
+The "f" suffix you see in the line `[SerializeField] private float velocidad = 7f;` is used to explicitly denote that the number is a floating-point (float) value. In C#, adding the "f" suffix is optional but can be useful for code clarity and to ensure that the number is treated as a float rather than a double.
 
 In C#, numeric literals without a suffix are treated as double by default. For example, if you write 7, it's treated as a double. However, Unity's SerializeField attribute expects the type to match exactly with the field type, so if you have a field of type float, it's good practice to add the "f" suffix to indicate that it's a float literal.
 
