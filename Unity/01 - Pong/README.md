@@ -65,29 +65,28 @@ Today, the Pong Game is considered to be the game which started the video games 
 
 - The RigidBody 2D allow us to set up that the ball will be affected by the impact with **Pala1** and **Pala2**, the result will be the ball bouncing which movement will be based on Phisics.
 
-
 ## The Ball Phisics
+
 <details>
 <summary>See more...</summary>
 <br>
 
-  - The default Phisics rules can cause a lost of energy during the impacts, so to change that we can create a **Physics Material 2D** that prevents by modifying the Friction and the Bounciness value.
-  <p align="center">
-    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial.png?raw=true" height="350" title="Pong">
-  </p>
-  <p align="center">
-    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial2.png?raw=true" height="350" title="Pong">
-  </p>
+- The default Phisics rules can cause a lost of energy during the impacts, so to change that we can create a **Physics Material 2D** that prevents by modifying the Friction and the Bounciness value.
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial.png?raw=true" height="350" title="Pong">
+</p>
+<p align="center">
+  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/PhysicsMaterial2.png?raw=true" height="350" title="Pong">
+</p>
 
-  - This new rules must be applied to the **Bola** RigidBody by changing the Material
+- This new rules must be applied to the **Bola** RigidBody by changing the Material
   <p align="center">
     <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Unity/01%20-%20Pong/Images/RigidBodyBola.png?raw=true" height="350" title="Pong">
   </p>
 </details>
 
-
-
 ## Paddle Physics
+
 <details>
 <summary>See more...</summary>
 <br>
@@ -164,7 +163,7 @@ public class Pala : MonoBehaviour
 
 11. **Vector2 posicionPala = transform.position;**: This line creates a Vector2 variable named "posicionPala" and initializes it with the current position of the GameObject to which this script is attached.
 
-12. **posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento * velocidad * Time.deltaTime, -limiteY, limiteY);**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY". We need to use limits because the RigidBody with Kinematic mode does not detects the collisions with the ceiling and floor.
+12. **posicionPala.y = Mathf.Clamp(posicionPala.y + movimiento _ velocidad _ Time.deltaTime, -limiteY, limiteY);**: This line updates the "posicionPala.y" value based on the player's input for vertical movement ("movimiento"), the speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime"). The Mathf.Clamp function ensures that the new position does not exceed the specified vertical limits between "-limiteY" and "limiteY". We need to use limits because the RigidBody with Kinematic mode does not detects the collisions with the ceiling and floor.
 
 13. **transform.position = posicionPala;**: Finally, this line applies the updated position ("posicionPala") to the GameObject's transform, effectively moving the GameObject vertically within the specified limits.
 
@@ -206,6 +205,7 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
   So, after executing Input.GetAxisRaw("Vertical"), the movimiento variable will hold a value of either -1 (for downward input), 0 (for no input), or 1 (for upward input). This value can be used to control the vertical movement of an object in your game, such as moving a paddle up and down based on player input.
   <br>
+
   </details>
   <br>
 
@@ -214,16 +214,17 @@ In summary, this script controls the vertical movement of a GameObject (likely a
   <br>
   The line Vector2 posicionPala = transform.position; is used to create a new Vector2 variable named "posicionPala" and initialize it with the current position of the GameObject to which this script is attached. Let's break down what this line does step by step:
 
-  Vector2 posicionPala: This part declares a new variable named "posicionPala" with the data type Vector2. Vector2 is a type commonly used in Unity to represent 2D positions and directions. In this case, it's being used to store the position of the GameObject in 2D space.
+Vector2 posicionPala: This part declares a new variable named "posicionPala" with the data type Vector2. Vector2 is a type commonly used in Unity to represent 2D positions and directions. In this case, it's being used to store the position of the GameObject in 2D space.
 
-  transform.position: The transform component is a fundamental part of Unity GameObjects. It contains information about the GameObject's position, rotation, and scale. transform.position retrieves the current position of the GameObject in 3D space as a Vector3 (x, y, z).
+transform.position: The transform component is a fundamental part of Unity GameObjects. It contains information about the GameObject's position, rotation, and scale. transform.position retrieves the current position of the GameObject in 3D space as a Vector3 (x, y, z).
 
-  Since you're assigning the value of transform.position (a Vector3) to a Vector2 variable, Unity automatically converts the Vector3 to a Vector2 by discarding the z-component, resulting in a 2D position represented by "posicionPala."
+Since you're assigning the value of transform.position (a Vector3) to a Vector2 variable, Unity automatically converts the Vector3 to a Vector2 by discarding the z-component, resulting in a 2D position represented by "posicionPala."
 
-  In the context of your script, "posicionPala" is likely used to keep track of the GameObject's position in the 2D space, specifically in the Y-axis, as you can see from the later code where the Y-coordinate is modified based on player input.
+In the context of your script, "posicionPala" is likely used to keep track of the GameObject's position in the 2D space, specifically in the Y-axis, as you can see from the later code where the Y-coordinate is modified based on player input.
 
-  Overall, this line sets up a Vector2 variable to store the current 2D position of the GameObject, which can then be modified or used in various ways within the script.
-  <br>
+Overall, this line sets up a Vector2 variable to store the current 2D position of the GameObject, which can then be modified or used in various ways within the script.
+<br>
+
   </details>
   <br>
 
@@ -240,6 +241,7 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
   So, you don't need to explicitly specify which GameObject's transform you want to access in the script. Unity takes care of that for you based on the context of the script's attachment. If you attach the "Pala" script to multiple GameObjects, each instance of the script will independently reference the transform of the GameObject it's attached to.
   <br>
+
   </details>
   <br>
 
@@ -254,7 +256,7 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
   Mathf.Clamp(...): This is a function call to Mathf.Clamp, which is a Unity function used to restrict or "clamp" a value within specified minimum and maximum limits.
 
-  posicionPala.y + movimiento * velocidad * Time.deltaTime: Inside the Mathf.Clamp function, this expression calculates the new Y-coordinate for "posicionPala." It starts with the current Y-coordinate and adds a value that depends on player input ("movimiento"), speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime").
+  posicionPala.y + movimiento _ velocidad _ Time.deltaTime: Inside the Mathf.Clamp function, this expression calculates the new Y-coordinate for "posicionPala." It starts with the current Y-coordinate and adds a value that depends on player input ("movimiento"), speed ("velocidad"), and the time passed since the last frame ("Time.deltaTime").
 
   movimiento: This is a float value that typically represents player input for vertical movement. It can be -1 (for downward input), 0 (for no input), or 1 (for upward input).
 
@@ -280,6 +282,7 @@ In summary, this script controls the vertical movement of a GameObject (likely a
 
 
 ## Ball Movement
+
 <details>
 <summary>See more...</summary>
 <br>
@@ -345,48 +348,163 @@ public class Bola : MonoBehaviour
 }
 ```
 
+1. **using System.Collections;** : This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
+
+2. **using System.Collections.Generic;** : This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
+
+3. **using UnityEngine;** : This line includes the UnityEngine namespace, which provides access to Unity's core functionality.
+
+4. **public class Bola : MonoBehaviour**: This is the class declaration for a C# script named "Bola." The class inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
+
+5. **[SerializeField] private float velocidadInicial = 4f;** : This line declares a private float variable named "velocidadInicial" and initializes it with a value of 4. The [SerializeField] attribute allows you to expose this variable in the Unity Inspector.
+
+6. **[SerializeField] private float valorDeMultiplicacion = 1.1f;** : Similar to the previous line, this line declares another private float variable named "valorDeMultiplicacion" and initializes it with a value of 1.1. It's also marked with [SerializeField] for Inspector visibility.
+
+7. **private Rigidbody2D bolaRb;** : This declares a private variable of type Rigidbody2D named "bolaRb." It will be used to reference the Rigidbody2D component attached to the GameObject.
+
+8. **void Start()**: This is the declaration of the "Start" method. In Unity, "Start" is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In this script, the method is used to set up and initialize the "bolaRb" variable and then call the "Lanzar" method.
+
+9. **bolaRb = GetComponent<Rigidbody2D>();** : This line assigns the "bolaRb" variable by getting the Rigidbody2D component attached to the same GameObject as this script. It uses GetComponent to retrieve the component.
+
+10. **Lanzar();** : This line calls the "Lanzar" method, which is responsible for initializing the initial velocity of the GameObject.
+
+11. **private void Lanzar()**: This is the declaration of the "Lanzar" method. It's a custom method used to launch the ball with an initial velocity.
+
+12. **float velocidadX = Random.Range(0, 2) == 0 ? 1 : -1;** : This line calculates a random horizontal velocity for the ball. It uses Random.Range(0, 2) to generate a random number that's either 0 or 1, and then uses a conditional (ternary) operator to set velocidadX to 1 if the random number is 0, or -1 if it's 1.
+
+13. **float velocidadY = Random.Range(0, 2) == 0 ? 1 : -1;** : Similar to the previous line, this line calculates a random vertical velocity for the ball.
+
+14. **bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;** : This line assigns the initial velocity to the Rigidbody2D component of the ball. It creates a Vector2 with the velocidadX and velocidadY values and multiplies it by velocidadInicial.
+
+15. **private void OnCollisionEnter2D(Collision2D collision)**: This is the declaration of the "OnCollisionEnter2D" method, which is called automatically when a collision occurs between the ball and another GameObject that has a collider. This method is used to handle collision events.
+
+16. **if (collision.gameObject.CompareTag("PalaTag"))**: This line checks if the GameObject that the ball collided with has a tag "PalaTag." Tags are used to identify and categorize GameObjects in Unity.
+
+17. **bolaRb.velocity *= valorDeMultiplicacion;** : If the collision is with an object tagged as "PalaTag," this line multiplies the current velocity of the ball by the "valorDeMultiplicacion." This can be used to increase the speed of the ball upon collision.
+
+18. **private void OnTriggerEnter2D(Collider2D collision)**: This is the declaration of the "OnTriggerEnter2D" method. It's called automatically when the ball enters a trigger collider attached to another GameObject.
+
+19. **if (collision.gameObject.CompareTag("GolPala2Tag"))**: This line checks if the ball has entered a trigger collider with the tag "GolPala2Tag."
+
+20. **ControladorJuego.Instance.GolPala1();** : If the ball enters the trigger with the "GolPala2Tag" tag, this line calls a method named "GolPala1" on an instance of the "ControladorJuego" class. It appears to be a scoring mechanism.
+<br>
+<br>
+
+  <details>
+  <summary>What does this line: bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; ?</summary>
+  <br>
+  The line bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial; is used to set the velocity of the Rigidbody2D component attached to the GameObject (presumably a ball) in a 2D Unity game. Let's break down what this line does:
+
+  bolaRb.velocity: This part accesses the velocity property of the Rigidbody2D component named "bolaRb." The Rigidbody2D component is responsible for controlling the physics behavior of the GameObject, including its movement.
+
+  new Vector2(velocidadX, velocidadY): This part creates a new 2D vector (Vector2) with horizontal and vertical components specified by the variables "velocidadX" and "velocidadY." These components determine the direction and magnitude of the velocity.
+
+  velocidadX: This variable holds a value that represents the horizontal component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement to the right or left.
+
+  velocidadY: Similarly, this variable holds a value that represents the vertical component of the velocity. It can be either 1 (positive direction) or -1 (negative direction), indicating movement upward or downward.
+
+  * velocidadInicial: After creating the Vector2 with the desired direction, this line multiplies it by the "velocidadInicial" variable. "velocidadInicial" likely represents the initial speed or magnitude of the velocity that you want to give to the GameObject.
+
+  In summary, this line combines the horizontal and vertical components (determined by "velocidadX" and "velocidadY") and multiplies them by "velocidadInicial" to set the velocity of the Rigidbody2D component. This action effectively gives the GameObject a starting velocity, determining its initial movement direction and speed in the 2D space of the Unity game.
+  <br>
+  </details>
+</details>
+
+## Game Controller
+
+<details>
+  <summary>See more...</summary>
+
+  - This Script is a handler of issues such as the counters and the resetting of the initial position of the game for both the ball and the paddles.
+  <br>
+
+```csharp
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro; // Librería para los textos
+
+public class ControladorJuego : MonoBehaviour
+{
+    // Textos de los marcadores
+    [SerializeField] private TMP_Text marcadorPala1;
+    [SerializeField] private TMP_Text marcadorPala2;
+
+    // Componentes transform de las palas y la bola => para reiniciar posición
+    [SerializeField] private Transform pala1Transform;
+    [SerializeField] private Transform pala2Transform;
+    [SerializeField] private Transform bolaTransform;
+
+    // Variables que almacenen el valor de las puntuaciones
+    private int golesPala1, golesPala2;
+
+    // Patrón Singleton para tener un única instancia
+    private static ControladorJuego instance;
+    public static ControladorJuego Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<ControladorJuego>();
+            }
+            return instance;
+        }
+    }
+
+    // Actualizamos los marcadores
+    public void GolPala1()
+    {
+        golesPala1++;
+        marcadorPala1.text = golesPala1.ToString();
+    }
+    public void GolPala2()
+    {
+        golesPala2++;
+        marcadorPala2.text = golesPala2.ToString();
+    }
+
+    // Cuando se anota un punto / gol reiniciamos posiciones de las palas y de la bola
+    public void Reiniciar()
+    {
+        pala1Transform.position = new Vector2(pala1Transform.position.x, 0);
+        pala2Transform.position = new Vector2(pala2Transform.position.x, 0);
+        bolaTransform.position = new Vector2(0, 0);
+    }
+}
+```
+
 1. using System.Collections;: This line includes the namespace System.Collections, which is necessary for working with collections and data structures in C#.
 
 2. using System.Collections.Generic;: This line includes the namespace System.Collections.Generic, which is necessary for working with generic collections and data structures in C#.
 
 3. using UnityEngine;: This line includes the UnityEngine namespace, which provides access to Unity's core functionality.
 
-4. public class Bola : MonoBehaviour: This is the class declaration for a C# script named "Bola." The class inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
+4. using TMPro;: This line includes the TMPro namespace, which is used for handling TextMeshPro text components in Unity, commonly used for UI text.
 
-5. [SerializeField] private float velocidadInicial = 4f;: This line declares a private float variable named "velocidadInicial" and initializes it with a value of 4. The [SerializeField] attribute allows you to expose this variable in the Unity Inspector.
+5. public class ControladorJuego : MonoBehaviour: This is the class declaration for a C# script named "ControladorJuego." It inherits from MonoBehaviour, indicating that it's a Unity script that can be attached to GameObjects.
 
-6. [SerializeField] private float valorDeMultiplicacion = 1.1f;: Similar to the previous line, this line declares another private float variable named "valorDeMultiplicacion" and initializes it with a value of 1.1. It's also marked with [SerializeField] for Inspector visibility.
+6. [SerializeField] private TMP_Text marcadorPala1;: This line declares a private field of type TMP_Text named "marcadorPala1." It's marked with [SerializeField] to make it visible in the Unity Inspector, allowing you to assign TextMeshPro text components to it.
 
-7. private Rigidbody2D bolaRb;: This declares a private variable of type Rigidbody2D named "bolaRb." It will be used to reference the Rigidbody2D component attached to the GameObject.
+7. [SerializeField] private TMP_Text marcadorPala2;: Similar to the previous line, this declares a field for the second player's score.
 
-8. void Start(): This is the declaration of the "Start" method. In Unity, "Start" is called automatically when the GameObject this script is attached to is initialized (i.e., when the game starts). In this script, the method is used to set up and initialize the "bolaRb" variable and then call the "Lanzar" method.
+8. [SerializeField] private Transform pala1Transform;: These lines declare fields for the transform components of the paddles and the ball. They are used to reset the positions of these objects.
 
-9. bolaRb = GetComponent<Rigidbody2D>();: This line assigns the "bolaRb" variable by getting the Rigidbody2D component attached to the same GameObject as this script. It uses GetComponent to retrieve the component.
+9. private int golesPala1, golesPala2;: These lines declare private integer variables to store the scores for player 1 and player 2.
 
-10. Lanzar();: This line calls the "Lanzar" method, which is responsible for initializing the initial velocity of the GameObject.
+10. private static ControladorJuego instance;: This line declares a private static variable named "instance" of type "ControladorJuego." This is part of the Singleton design pattern used to ensure there is only one instance of this script.
 
-11. private void Lanzar(): This is the declaration of the "Lanzar" method. It's a custom method used to launch the ball with an initial velocity.
+11. public static ControladorJuego Instance: This is a property (getter) that provides access to the "instance" variable. It ensures that there's only one instance of "ControladorJuego" throughout the game. If there isn't an instance, it tries to find one using FindObjectOfType.
 
-12. float velocidadX = Random.Range(0, 2) == 0 ? 1 : -1;: This line calculates a random horizontal velocity for the ball. It uses Random.Range(0, 2) to generate a random number that's either 0 or 1, and then uses a conditional (ternary) operator to set velocidadX to 1 if the random number is 0, or -1 if it's 1.
+12. public void GolPala1(): This declares a public method named "GolPala1," which is used to update the score for player 1.
 
-13. float velocidadY = Random.Range(0, 2) == 0 ? 1 : -1;: Similar to the previous line, this line calculates a random vertical velocity for the ball.
+13. public void GolPala2(): Similar to the previous line, this declares a method to update the score for player 2.
 
-14. bolaRb.velocity = new Vector2(velocidadX, velocidadY) * velocidadInicial;: This line assigns the initial velocity to the Rigidbody2D component of the ball. It creates a Vector2 with the velocidadX and velocidadY values and multiplies it by velocidadInicial.
+14. public void Reiniciar(): This method is used to reset the positions of the paddles and the ball when a point or goal is scored. It sets their positions to specific coordinates.
 
-15. private void OnCollisionEnter2D(Collision2D collision): This is the declaration of the "OnCollisionEnter2D" method, which is called automatically when a collision occurs between the ball and another GameObject that has a collider. This method is used to handle collision events.
+15. The script concludes with the closing braces for the class and the namespace.
 
-16. if (collision.gameObject.CompareTag("PalaTag")): This line checks if the GameObject that the ball collided with has a tag "PalaTag." Tags are used to identify and categorize GameObjects in Unity.
-
-17. bolaRb.velocity *= valorDeMultiplicacion;: If the collision is with an object tagged as "PalaTag," this line multiplies the current velocity of the ball by the "valorDeMultiplicacion." This can be used to increase the speed of the ball upon collision.
-
-18. private void OnTriggerEnter2D(Collider2D collision): This is the declaration of the "OnTriggerEnter2D" method. It's called automatically when the ball enters a trigger collider attached to another GameObject.
-
-19. if (collision.gameObject.CompareTag("GolPala2Tag")): This line checks if the ball has entered a trigger collider with the tag "GolPala2Tag."
-
-20. ControladorJuego.Instance.GolPala1();: If the ball enters the trigger with the "GolPala2Tag" tag, this line calls a method named "GolPala1" on an instance of the "ControladorJuego" class. It appears to be a scoring mechanism.
-
-
-
+In summary, this script manages the game's scoring system, updates the scores displayed on the screen, and provides methods to reset the positions of game elements. It also employs the
 
 
 
@@ -394,12 +512,8 @@ public class Bola : MonoBehaviour
 
 </details>
 
+---
 
-
-
-
-
-****
 <br>
 <br>
 <br>

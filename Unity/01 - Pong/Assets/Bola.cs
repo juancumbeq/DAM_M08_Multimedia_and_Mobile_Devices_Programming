@@ -38,7 +38,7 @@ public class Bola : MonoBehaviour
         }
     }
 
-    // Detectamos si se alcanzó alguan de las 2 zonas de gol
+    // Detectamos si se alcanzó alguna de las 2 zonas de gol
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("GolPala2Tag"))
