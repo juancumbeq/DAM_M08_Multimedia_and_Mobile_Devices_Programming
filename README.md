@@ -12,7 +12,7 @@
   <figure>
     <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
       <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "25%"title="Linear Layout">
-      <figcaption>Linear Layout</figcaption>
+      <p>Linear Layout</p>
     </a>
   </figure>
 </p>
@@ -20,17 +20,7 @@
 
 
 
-<div style="display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap;">
-
-  <div style="flex: 1; padding: 10px;">
-    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" alt="Image 1" width="500">
-    <p>Caption for Image 1</p>
-  </div>
-
-  <div style="flex: 1; padding: 10px;">
-    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Results.png?raw=true" alt="Image 2" width="500">
-    <p>Caption for Image 2</p>
-  </div>
+<!-- <div style="display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap;">
 
   <div style="flex: 1; padding: 10px;">
     <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" alt="Image 1" width="500">
@@ -43,7 +33,7 @@
   </div>
 
   <!-- Add more image and caption pairs here -->
-</div>
+</div> -->
 
 
 
