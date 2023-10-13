@@ -9,11 +9,13 @@
 ### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/tree/main/Android/01%20-%20Pong)
 
 <div align="center">
- <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
-  <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "97%"title="Linear Layout">
- </a>
+  <figure>
+    <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+      <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "25%"title="Linear Layout">
+      <figcaption>Linear Layout</figcaption>
+    </a>
+  </figure>
 </div>
-
 
 ## Unity Projects
 
