@@ -9,28 +9,30 @@
 ### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/tree/main/Android/01%20-%20Pong)
 
 <p align="center">
-  <figure>
-    <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
-      <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "25%"title="Linear Layout">
-      <p >Linear Layout</p>
-    </a>
-  </figure>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/FrameLayout_Phone.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/TableLayout_Phone.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/ConstraintLayout_Phone.png?raw=true" width= "23%"title="Linear Layout">
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Results.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/FrameLayout_Results.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/TableLayout_Results.png?raw=true" width= "23%"title="Linear Layout">&nbsp;&nbsp;&nbsp;
+  </a>
+  <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
+    <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/ConstraintLayout_Results.png?raw=true" width= "23%"title="Linear Layout">
+  </a>
 </p>
-
-
-<div align="center">
-  <div style="display: inline-block;">
-    <button> Click </button>
-    <img> asda </img>
-    <p>asdasda</p>
-  </div>
-  <div style="display: inline-block;">
-    <button> Click </button>
-    <img> asda </img>
-    <p>asdasda</p>
-  </div>
-</div>
-
 
 
 
