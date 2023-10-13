@@ -6,7 +6,7 @@
 
 ## Android Projects
 
-### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/tree/main/Android/01%20-%20Pong)
+### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts)
 
 <p align="center">
   <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
