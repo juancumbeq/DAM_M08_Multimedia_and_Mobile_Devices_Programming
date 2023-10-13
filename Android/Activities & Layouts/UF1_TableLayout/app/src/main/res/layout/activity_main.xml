@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white" >
+
+    <!-- Cabecera -->
+    <TableRow
+        android:background="@color/teal_700"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Producto"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Subtotal"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/white">
+        </TextView>
+    </TableRow>
+
+    <!-- Primera Fila -->
+    <TableRow
+        android:background="@color/white"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Jabón de manos x 1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Segunda Fila -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Shampoo Monster x 1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="9,50€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Tercera Fila -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pastas Dulcesol x 2"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5,40€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Cuarta Fila -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Café Mezcla 250gr x 1"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black">
+        </TextView>
+        <TextView
+            android:id="@+id/precio4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1,70€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Línea de la tabla -->
+    <View
+        android:layout_height="5dp"
+        android:background="#FF909090" >
+    </View>
+
+    <!-- Resumen de la Compra -->
+    <!-- Subtotal -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Subtotal"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="18,6€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Envío -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gastos de envío"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Descuento -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Descuento"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="18,6€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+
+    <!-- Total -->
+    <TableRow
+        android:padding="10dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700">
+        </TextView>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="16,6€"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/black">
+        </TextView>
+    </TableRow>
+</TableLayout>
