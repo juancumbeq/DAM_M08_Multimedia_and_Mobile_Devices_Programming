@@ -19,15 +19,15 @@
 
 
 <div align="center">
-  <div style="display: inline;">
+  <div style="display: inline-block;">
     <button> Click </button>
     <img> asda </img>
     <p>asdasda</p>
   </div>
-  <div style="display: inline;">
+  <div style="display: inline-block;">
     <button> Click </button>
     <img> asda </img>
-    <p style="display: inline;">asdasda</p>
+    <p>asdasda</p>
   </div>
 </div>
 
