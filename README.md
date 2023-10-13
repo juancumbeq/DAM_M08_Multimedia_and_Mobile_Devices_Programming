@@ -34,8 +34,6 @@
   </a>
 </p>
 
-
-
 <!-- <div style="display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap;">
 
   <div style="flex: 1; padding: 10px;">
@@ -49,7 +47,6 @@
   </div>
 
   <!-- Add more image and caption pairs here -->
-</div>
 
 ## Unity Projects
 
