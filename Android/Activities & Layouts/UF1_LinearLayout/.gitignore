@@ -16,7 +16,7 @@ local.properties
 
 # Gradle files
 .gradle/
-*.gradle
+*gradle*
 build/
 
 # Built application files
