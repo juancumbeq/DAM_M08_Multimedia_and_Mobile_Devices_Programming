@@ -9,14 +9,13 @@
 ### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/tree/main/Android/01%20-%20Pong)
 
 <p align="center">
+  <figure>
     <a href="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts" target="_blank">
       <img src="https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts/Images/LinearLayout_Phone.png?raw=true" width= "25%"title="Linear Layout">
-      <p>Linear Layout</p>
+      <p >Linear Layout</p>
     </a>
+  </figure>
 </p>
-
-
-
 
 <!-- <div style="display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap;">
 
@@ -32,22 +31,6 @@
 
   <!-- Add more image and caption pairs here -->
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Unity Projects
 
