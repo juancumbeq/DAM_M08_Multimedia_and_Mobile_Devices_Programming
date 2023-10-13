@@ -4,7 +4,7 @@
 
 </div>
 
-## Android Projects
+## Android Studio Projects
 
 ### [Activities & Layouts](https://github.com/juancumbeq/DAM_M08_Multimedia_and_Mobile_Devices_Programming/blob/main/Android/Activities%20%26%20Layouts)
 
