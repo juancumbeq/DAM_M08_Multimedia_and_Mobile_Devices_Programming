@@ -17,6 +17,23 @@
   </figure>
 </p>
 
+
+<div align="center">
+  <div style="display: inline;">
+    <button> Click </button>
+    <img> asda </img>
+    <p>asdasda</p>
+  </div>
+  <div style="display: inline;">
+    <button> Click </button>
+    <img> asda </img>
+    <p style="display: inline;">asdasda</p>
+  </div>
+</div>
+
+
+
+
 <!-- <div style="display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap;">
 
   <div style="flex: 1; padding: 10px;">
